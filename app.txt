@@ -1,0 +1,13 @@
+app/
+  page.tsx          → assembles all sections
+  layout.tsx         → shared wrapper (nav, fonts, metadata)
+components/
+  Hero.tsx
+  About.tsx
+  Projects.tsx
+  ProjectCard.tsx    → reusable, one per project
+  Skills.tsx
+  Experience.tsx
+  Contact.tsx
+public/
+  images/            → screenshots, headshot, icons

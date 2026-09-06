@@ -49,23 +49,23 @@ export default function Hero() {
       <p className="text-sm tracking-widest text-gray-500 mb-4 uppercase">
         Electronics Systems Engineer
       </p>
-      <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+      <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6">
         Hi, I&apos;m Godwill
       </h1>
-      <p className="max-w-xl text-gray-400 text-lg mb-10">
+      <p className="max-w-xl text-gray-600 dark:text-gray-400 text-lg mb-10">
         Electronic Systems Engineering student at the University of Regina with
         a passion for low-level systems, FPGAs, and custom hardware design.
       </p>
       <div className="flex items-center gap-4 mb-8">
         <button
           onClick={() => setShowResumePopup(true)}
-          className="px-6 py-3 rounded-full border border-gray-700 text-white hover:border-gray-500 transition"
+          className="px-6 py-3 rounded-full border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white hover:border-gray-400 dark:hover:border-gray-500 transition"
         >
           Resume
         </button>
         <a
           href="#contact"
-          className="px-6 py-3 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition"
+          className="px-6 py-3 rounded-full bg-gray-900 text-white dark:bg-white dark:text-black font-medium hover:bg-gray-700 dark:hover:bg-gray-200 transition"
         >
           Contact
         </a>
@@ -75,7 +75,7 @@ export default function Hero() {
           href="https://linkedin.com/in/godwillattisso"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-white transition"
+          className="hover:text-gray-900 dark:hover:text-white transition"
           aria-label="LinkedIn"
         >
           <LinkedinIcon />
@@ -84,7 +84,7 @@ export default function Hero() {
           href="https://github.com/godwillattisso"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-white transition"
+          className="hover:text-gray-900 dark:hover:text-white transition"
           aria-label="GitHub"
         >
           <GithubIcon />
@@ -98,7 +98,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-black/70 flex items-center justify-center z-[100] px-4"
+            className="fixed inset-0 bg-black/50 dark:bg-black/70 flex items-center justify-center z-[100] px-4"
             onClick={() => setShowResumePopup(false)}
           >
             <motion.div
@@ -106,17 +106,17 @@ export default function Hero() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 10 }}
               transition={{ duration: 0.2 }}
-              className="bg-zinc-900 border border-gray-800 rounded-2xl p-8 max-w-sm text-center"
+              className="bg-white dark:bg-zinc-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-8 max-w-sm text-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <h3 className="text-lg font-semibold text-white mb-2">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                 Want my resume?
               </h3>
-              <p className="text-gray-400 mb-6">
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
                 Reach out to me at{" "}
                 <a
                   href="mailto:attisso.godwill@gmail.com"
-                  className="text-white underline underline-offset-2"
+                  className="text-gray-900 dark:text-white underline underline-offset-2"
                 >
                   attisso.godwill@gmail.com
                 </a>{" "}
@@ -124,7 +124,7 @@ export default function Hero() {
               </p>
               <button
                 onClick={() => setShowResumePopup(false)}
-                className="px-5 py-2 rounded-full bg-white text-black text-sm font-medium hover:bg-gray-200 transition"
+                className="px-5 py-2 rounded-full bg-gray-900 text-white dark:bg-white dark:text-black text-sm font-medium hover:bg-gray-700 dark:hover:bg-gray-200 transition"
               >
                 Close
               </button>

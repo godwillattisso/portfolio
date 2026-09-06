@@ -44,8 +44,6 @@ export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // Avoid rendering theme-dependent UI until mounted on the client,
-  // since the server doesn't know the user's theme yet (prevents mismatch errors)
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -57,7 +55,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="text-gray-400 hover:text-white transition"
+      className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition"
       aria-label="Toggle theme"
     >
       {theme === "dark" ? <SunIcon /> : <MoonIcon />}

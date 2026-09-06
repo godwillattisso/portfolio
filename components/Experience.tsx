@@ -6,7 +6,7 @@ export default function Experience() {
       <p className="text-center text-sm tracking-widest text-gray-500 mb-2">
         WHERE I'VE WORKED
       </p>
-      <h2 className="text-4xl font-bold text-white mb-12 text-center">
+      <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
         Experience
       </h2>
 

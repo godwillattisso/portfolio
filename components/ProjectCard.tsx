@@ -18,12 +18,14 @@ export default function ProjectCard({
       href={link}
       target={link ? "_blank" : undefined}
       rel={link ? "noopener noreferrer" : undefined}
-      className="block p-6 rounded-2xl border border-gray-800 hover:border-gray-600 transition"
+      className="block p-6 rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 transition"
     >
-      <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
-      <p className="text-gray-400 mb-4">{description}</p>
+      <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+        {title}
+      </h3>
+      <p className="text-gray-600 dark:text-gray-400 mb-4">{description}</p>
       {link && (
-        <p className="flex items-center gap-1 text-sm text-gray-300 mb-4">
+        <p className="flex items-center gap-1 text-sm text-gray-700 dark:text-gray-300 mb-4">
           View on GitHub <span className="text-xs">↗</span>
         </p>
       )}
@@ -31,7 +33,7 @@ export default function ProjectCard({
         {stack.map((tech) => (
           <span
             key={tech}
-            className="text-xs px-3 py-1 rounded-full bg-gray-800 text-gray-300"
+            className="text-xs px-3 py-1 rounded-full bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300"
           >
             {tech}
           </span>

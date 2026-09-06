@@ -1,4 +1,4 @@
-// components/Navbar.tsx
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   return (
@@ -17,6 +17,7 @@ export default function Navbar() {
         <a href="#contact" className="hover:text-white transition">
           Contact
         </a>
+        <ThemeToggle />
       </div>
     </nav>
   );

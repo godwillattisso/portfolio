@@ -1,4 +1,7 @@
-import { Mail } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 function LinkedinIcon() {
   return (
@@ -39,6 +42,8 @@ function GithubIcon() {
 }
 
 export default function Hero() {
+  const [showResumePopup, setShowResumePopup] = useState(false);
+
   return (
     <section className="flex flex-col items-center justify-center min-h-screen text-center px-4 pt-20">
       <p className="text-sm tracking-widest text-gray-500 mb-4 uppercase">
@@ -52,14 +57,12 @@ export default function Hero() {
         a passion for low-level systems, FPGAs, and custom hardware design.
       </p>
       <div className="flex items-center gap-4 mb-8">
-        <a
-          href="/resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={() => setShowResumePopup(true)}
           className="px-6 py-3 rounded-full border border-gray-700 text-white hover:border-gray-500 transition"
         >
           Resume
-        </a>
+        </button>
         <a
           href="#contact"
           className="px-6 py-3 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition"
@@ -69,7 +72,7 @@ export default function Hero() {
       </div>
       <div className="flex items-center gap-5 text-gray-500">
         <a
-          href="https://linkedin.com/in/yourusername"
+          href="https://linkedin.com/in/godwillattisso"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-white transition"
@@ -78,7 +81,7 @@ export default function Hero() {
           <LinkedinIcon />
         </a>
         <a
-          href="https://github.com/yourusername"
+          href="https://github.com/godwillattisso"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-white transition"
@@ -86,14 +89,49 @@ export default function Hero() {
         >
           <GithubIcon />
         </a>
-        <a
-          href="mailto:youremail@example.com"
-          className="hover:text-white transition"
-          aria-label="Email"
-        >
-          <Mail className="w-[18px] h-[18px]" />
-        </a>
       </div>
+
+      <AnimatePresence>
+        {showResumePopup && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 bg-black/70 flex items-center justify-center z-[100] px-4"
+            onClick={() => setShowResumePopup(false)}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 10 }}
+              transition={{ duration: 0.2 }}
+              className="bg-zinc-900 border border-gray-800 rounded-2xl p-8 max-w-sm text-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h3 className="text-lg font-semibold text-white mb-2">
+                Want my resume?
+              </h3>
+              <p className="text-gray-400 mb-6">
+                Reach out to me at{" "}
+                <a
+                  href="mailto:attisso.godwill@gmail.com"
+                  className="text-white underline underline-offset-2"
+                >
+                  attisso.godwill@gmail.com
+                </a>{" "}
+                and I&apos;ll send it over.
+              </p>
+              <button
+                onClick={() => setShowResumePopup(false)}
+                className="px-5 py-2 rounded-full bg-white text-black text-sm font-medium hover:bg-gray-200 transition"
+              >
+                Close
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

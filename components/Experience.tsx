@@ -22,7 +22,7 @@ export default function Experience() {
           role="Electrical and Instrumentation Engineering Student"
           org="Co-op Refinery Complex"
           dates="Jan 2025 — Apr 2025"
-          logo="/crc_logo.png"
+          logo="/crc1_logo.jpg"
         />
         <ExperienceItem
           role="Founder & President"

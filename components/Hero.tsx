@@ -8,9 +8,7 @@ export default function Hero() {
         Electronic Systems Engineering Student
       </p>
       <p className="max-w-xl text-gray-400 mb-8">
-        I build firmware, automation systems, and practical engineering tools —
-        currently interning at Suncor and leading NSBE at the University of
-        Regina.
+        I am Electronics Systems Engineering student at the University of Regina. I build hardware
       </p>
       <a
         href="#projects"

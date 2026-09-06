@@ -31,7 +31,12 @@ export default function Projects() {
         <ProjectCard
           title="Frequency Detection System"
           description="A soldered analog frequency detection circuit using filters, amplifiers, and voltage regulation, tested with an oscilloscope and DMM."
-          stack={["Analog Design", "KiCad", "Voltage Regulation"]}
+          stack={[
+            "Analog Design",
+            "KiCad",
+            "Voltage Regulation",
+            "Oscilloscope",
+          ]}
         />
         <ProjectCard
           title="Analog Modulation Analysis"

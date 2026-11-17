@@ -1,34 +1,35 @@
 import ThemeToggle from "./ThemeToggle";
 
+const links = [
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#contact", label: "Contact" },
+];
+
+// Floating glass "pill" navbar that stays at the top while scrolling.
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white/60 dark:bg-[#0a0e14]/60 backdrop-blur-md z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-8 py-4 sm:py-6">
-        <span className="font-bold text-base sm:text-lg text-gray-900 dark:text-white whitespace-nowrap">
-          Godwill Attisso
-        </span>
-        <div className="flex items-center gap-3 sm:gap-5 text-sm sm:text-base text-gray-600 dark:text-gray-400">
-          <a
-            href="#experience"
-            className="hover:text-gray-900 dark:hover:text-white transition"
-          >
-            Experience
-          </a>
-          <a
-            href="#projects"
-            className="hover:text-gray-900 dark:hover:text-white transition"
-          >
-            Projects
-          </a>
-          <a
-            href="#contact"
-            className="hover:text-gray-900 dark:hover:text-white transition"
-          >
-            Contact
-          </a>
+    <header className="fixed top-4 inset-x-0 z-50 px-4">
+      <nav className="mx-auto max-w-3xl flex items-center justify-between gap-2 rounded-full border border-line bg-background/70 backdrop-blur-xl px-3 sm:px-4 py-2 shadow-sm shadow-black/5">
+        <a href="#" className="flex items-center gap-2 font-semibold text-foreground whitespace-nowrap">
+          <span className="grid place-items-center w-7 h-7 rounded-full bg-foreground text-background text-[11px] font-bold">
+            GA
+          </span>
+          <span className="hidden sm:inline text-sm">Godwill Attisso</span>
+        </a>
+        <div className="flex items-center gap-1 text-sm text-muted">
+          {links.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-foreground hover:bg-foreground/5 transition"
+            >
+              {l.label}
+            </a>
+          ))}
           <ThemeToggle />
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }

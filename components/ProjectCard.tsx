@@ -1,3 +1,5 @@
+import { ArrowUpRight } from "lucide-react";
+
 type ProjectCardProps = {
   title: string;
   description: string;
@@ -13,19 +15,21 @@ export default function ProjectCard({ title, description, stack, link }: Project
       href={link}
       target={link ? "_blank" : undefined}
       rel={link ? "noopener noreferrer" : undefined}
-      className="block p-4 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 transition"
+      className="group flex h-full flex-col p-5 rounded-2xl border border-line bg-card backdrop-blur hover:border-line-strong hover:-translate-y-0.5 transition"
     >
-      <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-1">
+      <h3 className="flex items-start justify-between gap-2 text-base font-medium text-foreground mb-2">
         {title}
-        {link && <span className="ml-1 text-xs text-gray-500">↗</span>}
+        {link && (
+          <ArrowUpRight
+            size={16}
+            className="shrink-0 mt-0.5 text-muted transition group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          />
+        )}
       </h3>
-      <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-2">{description}</p>
-      <div className="flex flex-wrap gap-1.5">
+      <p className="text-sm text-muted mb-4 line-clamp-2">{description}</p>
+      <div className="mt-auto flex flex-wrap gap-1.5">
         {stack.map((tech) => (
-          <span
-            key={tech}
-            className="text-[11px] px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300"
-          >
+          <span key={tech} className="font-mono text-[11px] px-2 py-0.5 rounded-md border border-line text-muted">
             {tech}
           </span>
         ))}

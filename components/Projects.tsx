@@ -1,19 +1,17 @@
 import ProjectCard from "@/components/ProjectCard";
 import FeaturedProject from "@/components/FeaturedProject";
+import SectionHeading from "@/components/SectionHeading";
 
 export default function Projects() {
   return (
-    <section id="projects" className="max-w-5xl mx-auto px-4 py-24">
-      <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-10 text-center">
-        Projects
-      </h2>
-
+    <section id="projects" className="max-w-5xl mx-auto px-4 py-24 scroll-mt-24">
+      <SectionHeading eyebrow="WHAT I'VE BUILT" title="Projects" />
       <FeaturedProject />
 
-      <h3 className="text-sm tracking-widest text-gray-500 mb-4">
+      <h3 className="font-mono text-xs tracking-widest text-muted mb-4">
         OTHER PROJECTS
       </h3>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <ProjectCard
           title="STM32 Bare-Metal Environmental Monitor"
           description="Real-time environmental monitor on an STM32, using custom C drivers, timer interrupts, and ADC-controlled fan speed, synchronized with an I2C-based light sensor and LCD."

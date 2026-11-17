@@ -1,16 +1,12 @@
 import ExperienceItem from "@/components/ExperienceItem";
+import SectionHeading from "@/components/SectionHeading";
 
 export default function Experience() {
   return (
-    <section id="experience" className="max-w-5xl mx-auto px-4 py-24">
-      <p className="text-center text-sm tracking-widest text-gray-500 mb-2">
-        WHERE I'VE WORKED
-      </p>
-      <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
-        Experience
-      </h2>
+    <section id="experience" className="max-w-5xl mx-auto px-4 py-24 scroll-mt-24">
+      <SectionHeading eyebrow="WHERE I'VE WORKED" title="Experience" />
 
-      <div>
+      <div className="space-y-3">
         <ExperienceItem
           role="Automation Engineering Intern"
           org="Suncor Energy"

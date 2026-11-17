@@ -8,6 +8,9 @@ components/
   ProjectCard.tsx    → reusable, one per project
   Skills.tsx
   Experience.tsx
+  ExperienceItem.tsx → reusable, one per experience
   Contact.tsx
+  ThemeProvider.tsx
+  ThemeToggle.tsx
 public/
   images/            → screenshots, headshot, icons

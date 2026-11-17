@@ -1,4 +1,5 @@
 import ProjectCard from "@/components/ProjectCard";
+import FeaturedProject from "@/components/FeaturedProject";
 
 export default function Projects() {
   return (
@@ -6,7 +7,13 @@ export default function Projects() {
       <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-10 text-center">
         Projects
       </h2>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+      <FeaturedProject />
+
+      <h3 className="text-sm tracking-widest text-gray-500 mb-4">
+        OTHER PROJECTS
+      </h3>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <ProjectCard
           title="STM32 Bare-Metal Environmental Monitor"
           description="Real-time environmental monitor on an STM32, using custom C drivers, timer interrupts, and ADC-controlled fan speed, synchronized with an I2C-based light sensor and LCD."
